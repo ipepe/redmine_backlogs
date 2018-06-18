@@ -14,7 +14,7 @@ namespace :redmine do
         {name:"High", "position"=>3, is_default:false, active:true, position_name:"high2"},
         {name:"Critical", "position"=>4, is_default:false, active:true, position_name:"highest"}
       ].each do |attr|
-        IssuePriority.create!(attr)
+        puts IssuePriority.create!(attr).inspect
       end
 
       raise "You must set the default issue priority in redmine prior to installing backlogs" unless IssuePriority.default
